@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+table {
+    position: relative;
+    top: 3em;
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: center;
+    border: 1px;
+    padding: 0.5rem;
+}
+
+tr{
+    align-items: center;
+}
+
+tr:hover{
+    background-color: #ffb861;
+}
+
+.btn-trash {
+    position: relative;
+    top: 7px;
+    right: 7px;
+}
+
+.fa-trash {
+    pointer-events: none;
+}
