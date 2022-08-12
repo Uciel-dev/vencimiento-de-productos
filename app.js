@@ -35,7 +35,7 @@ function agregarProducto(event){
 
     // Crear la cantidad de dias faltantes
     const diasFaltantes = document.createElement("td");
-    const cantidadDiasFaltantes = calcularDias(fechaInput)
+    const cantidadDiasFaltantes = calcularDias(fechaInput.value)
     diasFaltantes.innerText = cantidadDiasFaltantes;
 
     //Agregar un producto a la tabla
@@ -76,9 +76,8 @@ function eliminarProducto(e){
     }
 }
 
-function calcularDias (input) {
-
-    const fechaDeVencimiento = new Date(input.value);
+function calcularDias (inputFechaVencimiento) {
+    const fechaDeVencimiento = new Date(inputFechaVencimiento);
     const fechaActual = new Date();
     const unDiaEnMs = 86400000;
 
@@ -88,7 +87,6 @@ function calcularDias (input) {
 
     return cantidadDeDias;
 }
-
 
 function guardarProdunctosEnLocalStorage (valorEan, valorNombreProducto, valorFechaVencimiento, valorCantidadDias) {
 
@@ -155,7 +153,7 @@ function actualizarProductosEnLocalStorage () {
 
         // Crear la cantidad de dias faltantes
         const diasFaltantes = document.createElement("td");
-        diasFaltantes.innerText = cantidadDias[i];
+        diasFaltantes.innerText = calcularDias(fechaVencimiento[i]);
 
         //Agregar un producto a la tabla
         productoTr.appendChild(nuevoEan);
